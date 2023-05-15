@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AppBar, Toolbar, Link as LinkMui, Typography } from "@mui/material";
+import { AppBar, Toolbar, Box, Button, IconButton, Badge } from "@mui/material";
+import { SearchOffOutlined, ShoppingCartOutlined } from "@mui/icons-material";
 
 export const Navbar = () => {
   const [mounted, setMounted] = useState(false);
@@ -13,14 +14,39 @@ export const Navbar = () => {
   return (
     <AppBar>
       <Toolbar>
-        <Link href={"/"} passHref>
-          <LinkMui component={"a"} display={"flex"} alignItems={"center"}>
-            <Typography variant="h6">Teslo |</Typography>
-            <Typography sx={{ ml: 0.5 }}>Shop</Typography>
-          </LinkMui>
+        <Link
+          href={"/"}
+          passHref
+          style={{ color: "black", textDecoration: "none" }}
+        >
+          Teslo | Shop
         </Link>
+        <Box flex={1} />
 
-        {/* <Box></Box> */}
+        <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Link href={"/category/men"} passHref>
+            <Button>Men</Button>
+          </Link>
+          <Link href={"/category/women"} passHref>
+            <Button>Women</Button>
+          </Link>
+          <Link href={"/category/childs"} passHref>
+            <Button>Childrens</Button>
+          </Link>
+        </Box>
+
+        <Box flex={1} />
+        <IconButton>
+          <SearchOffOutlined />
+        </IconButton>
+        <Link href={"/cart"} passHref>
+          <IconButton>
+            <Badge badgeContent={2} color="secondary">
+              <ShoppingCartOutlined />
+            </Badge>
+          </IconButton>
+        </Link>
+        <Button>Menu</Button>
       </Toolbar>
     </AppBar>
   );
