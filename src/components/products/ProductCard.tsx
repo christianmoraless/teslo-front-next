@@ -30,10 +30,9 @@ export const ProductCard: FC<Props> = ({ product }) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => {
         setIsHover(false);
-      }}
-    >
+      }}>
       <Card>
-        <Link href={"/products/slug"} passHref prefetch={false}>
+        <Link href={"/product/slug"} passHref prefetch={false}>
           <CardActionArea>
             <CardMedia
               component={"img"}
