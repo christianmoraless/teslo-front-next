@@ -2,7 +2,8 @@
 import { Box, Button, Chip, Grid, Typography } from "@mui/material";
 import { initialData } from "@/database/products";
 import { ShopLayout } from "@/components";
-import { ProductSlideshow } from "@/components/products";
+import { ProductSlideshow, SizeSelector } from "@/components/products";
+import { Counter } from "@/components/ui";
 
 const product = initialData.products[0];
 export default function Page() {
@@ -25,6 +26,11 @@ export default function Page() {
             {/* qty */}
             <Box sx={{ my: 2 }}>
               <Typography variant="subtitle1">Quantity</Typography>
+              <Counter />
+              <SizeSelector
+                sizes={product.sizes}
+                selectedSize={product.sizes[0]}
+              />
             </Box>
 
             <Button color="secondary" className="circular-btn">
