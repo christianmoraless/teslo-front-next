@@ -28,7 +28,7 @@ export const CardList: FC<Props> = ({ editable }) => {
             <Link href={"/product/slug"}>
               <CardActionArea>
                 <CardMedia
-                  image={`products/${product.images[0]}`}
+                  image={`/products/${product.images[0]}`}
                   component="img"
                   sx={{ borderRadius: "5px" }}
                 />
