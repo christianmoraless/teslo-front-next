@@ -5,18 +5,37 @@ import {
   Button,
   Card,
   CardContent,
+  Chip,
   Divider,
   Grid,
   Typography,
 } from "@mui/material";
 import { ShopLayout, CardList, OrderSummary } from "@/components";
+import { CreditCardOffOutlined } from "@mui/icons-material";
 
-export default function Page() {
+export default function OrderPage() {
   return (
-    <ShopLayout title="Summary" pageDescription="Summary Page">
+    <ShopLayout title="Order Page" pageDescription="Order page">
       <Typography variant="h1" component={"h1"}>
-        Cart
+        Order: #3123123
       </Typography>
+
+      {/* <Chip
+        sx={{ my: 2 }}
+        label="Payment Pending"
+        variant="outlined"
+        color="error"
+        icon={<CreditCardOffOutlined />}
+      /> */}
+
+      <Chip
+        sx={{ my: 2 }}
+        label="Paid"
+        variant="outlined"
+        color="success"
+        icon={<CreditCardOffOutlined />}
+      />
+
       <Grid container>
         <Grid item xs={12} sm={7}>
           <CardList editable={false} />
@@ -48,9 +67,13 @@ export default function Page() {
               <OrderSummary />
 
               <Box>
-                <Button color="secondary" className="circular-btn">
-                  Comfirm order
-                </Button>
+                <Chip
+                  sx={{ my: 2 }}
+                  label="Paid"
+                  variant="outlined"
+                  color="success"
+                  icon={<CreditCardOffOutlined />}
+                />
               </Box>
             </CardContent>
           </Card>

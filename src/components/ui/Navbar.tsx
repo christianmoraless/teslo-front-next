@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AppBar, Toolbar, Box, Button, IconButton, Badge } from "@mui/material";
@@ -17,8 +18,7 @@ export const Navbar = () => {
         <Link
           href={"/"}
           passHref
-          style={{ color: "black", textDecoration: "none" }}
-        >
+          style={{ color: "black", textDecoration: "none" }}>
           Teslo | Shop
         </Link>
         <Box flex={1} />
